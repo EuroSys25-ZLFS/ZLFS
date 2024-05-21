@@ -1,0 +1,37 @@
+//ihhwang
+#ifndef _LINUX_ZONED_H
+#define _LINUX_ZONED_H
+
+#define NPO2 0 //support NPO2 ZNS SSD
+#define SK_ZNS 0
+
+#ifndef META_FOR_ZNS
+#define META_FOR_ZNS 1
+#endif
+
+#if META_FOR_ZNS
+#define DELAYED_MERGE 1
+#define META_LOG_STRIPE 1
+#if META_LOG_STRIPE
+#define META_STRIPE_CNT 2
+#else
+#define META_STRIPE_CNT 1
+#endif
+#endif
+
+#define STRIPE 1
+
+#if STRIPE
+#define GRID_STRIPE 1
+
+#if GRID_STRIPE
+#define GRID_CNT 8
+#endif
+
+#define STRIPE_SMALL 0
+#define STRIPE_MAX_CNT 16
+#define STRIPE_CNT 8
+#define STRIPE_MIN_CNT 4
+#define NODE_STRIPE 1
+#endif
+#endif //_LINUX_ZONED_H

@@ -1,0 +1,11 @@
+#ifndef __ZONED_H__
+#define __ZONED_H__
+
+#define META_FOR_ZNS 0
+#define GRID_STRIPE 0
+#if GRID_STRIPE
+#define GRID_CNT 8
+#define META_STRIPE_CNT 1 //1
+#endif
+
+#endif
